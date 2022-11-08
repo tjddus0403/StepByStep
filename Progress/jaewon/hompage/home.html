@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your_step</title>
+    <style>
+        .row{
+            width: 100%;
+            display: flex;
+
+            height: 50px;
+        }
+        body{
+            height: 100%;
+            background-color: #1A61BD;
+            /* background-image: url("로고\ 하양.png"); */
+            /* background-size: 10%; */
+        }
+        .container{
+            height: 100%;
+        }
+        .top_left{
+            width: 10%;
+        }
+        .top{
+            width: 80%;
+        }
+        .top_right{
+            width: 10%;
+        }
+        .top p{
+            margin-top: 10px;
+            font-size: 20px;
+            margin-bottom: 0;
+            color: #F4F4F4;
+        }
+        .team_logo{
+            max-width: 100%;
+            height: 50px;
+            float: right;
+        }
+        .center-text {
+            text-align: center;
+        }
+        .homepage{
+            margin: auto;
+            padding-top: 100px;
+
+        }
+        .logo{
+            width: 40%;
+            height: 20%;
+            border: 6px #F4F4F4 solid;
+            box-sizing: border-box;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .logo_img{
+            min-width: 100%;
+            min-height: 100%;
+            opacity: 1;
+        }
+        .txt{
+            position: absolute;
+            bottom: 120%;
+            left: 30px;
+            right: 10px;
+            text-align: left;
+            opacity: 0.2;
+            transition: all 0.3s ease-in-out;
+            z-index: 2;
+            color: #F4F4F4;
+        }
+        .logo:hover{
+            background-color: black;
+        }
+        .logo:hover .logo_img{
+            opacity: 0.5;
+        }
+        .logo:hover .txt{
+            bottom: 50%;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+        .start{
+            position: absolute;
+            height: 50px;
+            top: 120%;
+            left: 30%;
+            right: 30%;
+            opacity: 0.2;
+            transition: all 0.3s ease-in-out;
+            z-index: 2;
+            color: #000000;
+            font-size: 20px;
+            background-color: #F4F4F4;
+        }
+        .logo:hover .start{
+            top: 70%;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+        .start:hover{
+            background-color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center-text">
+        <header class="row">
+            <div class="top_left"></div>
+            <div class="top">
+                <p class="top_txt"><strong>AI경진대회</strong><br>그대의 걸음걸이</p>
+            </div>
+            <div class="top_right">
+                <img src="./로고 하양.png" alt="team_logo" class="team_logo">
+            </div>
+
+        </header>
+        <section class="homepage">
+            <div class="logo">
+                
+                <div class="txt">
+                    부추의 특별한 성분과 건강상의 효능<br>
+                    간 기능 개선 및 해독 작용이 있답니다.<br>
+                    항균 작용으로 감염을 예방하는 효능이 있답니다.<br>
+                    항염 작용으로 만성 질환 증상 개선을 도울 수 있답니다.<br>
+                    혈압을 낮추는 효능이 있답니다.<br>
+                    혈당 수치 개선 효능이 있답니다.<br>
+                    심혈관 건강을 돕는 효능이 있답니다.
+                </div>
+                <form>
+                    <input class="start" type="button" onclick="" value="Start!"/>
+                </form>
+                <img src="./횡단보도 사진.png" alt="logo" class="logo_img">
+            </div>
+            <div class="">
+
+            </div>
+            
+        </section>
+    </div>
+</body>
+</html>
