@@ -11,3 +11,8 @@ def home(request):
 
 def detect(request):
     return render(request, 'main/detect.html')
+
+def qr(request):
+    return render(request, 'main/qr.html')
+def url(request):
+    return render(request, 'main/url.html')
