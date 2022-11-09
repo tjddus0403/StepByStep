@@ -15,8 +15,7 @@
         body{
             height: 100%;
             background-color: #1A61BD;
-            /* background-image: url("로고\ 하양.png"); */
-            /* background-size: 10%; */
+
         }
         .container{
             height: 100%;
@@ -30,11 +29,9 @@
         .top_right{
             width: 10%;
         }
-        .top p{
-            margin-top: 10px;
-            font-size: 20px;
+        .proname{
+            height: 100%;
             margin-bottom: 0;
-            color: #F4F4F4;
         }
         .team_logo{
             max-width: 100%;
@@ -46,8 +43,9 @@
         }
         .homepage{
             margin: auto;
-            padding-top: 100px;
-
+            padding-top: 20px;
+            /* background-image: url("로고\ 하양.png"); */
+            /* background-size: 10%; */
         }
         .logo{
             width: 40%;
@@ -57,7 +55,7 @@
             margin: auto;
             position: relative;
             overflow: hidden;
-
+            border-radius: 50%;
         }
         .logo_img{
             min-width: 100%;
@@ -67,7 +65,7 @@
         .txt{
             position: absolute;
             bottom: 120%;
-            left: 30px;
+            left: 50px;
             right: 10px;
             text-align: left;
             opacity: 0.2;
@@ -82,7 +80,7 @@
             opacity: 0.5;
         }
         .logo:hover .txt{
-            bottom: 50%;
+            bottom: 40%;
             opacity: 1;
             transition: all 0.3s ease-in-out;
         }
@@ -107,6 +105,15 @@
         .start:hover{
             background-color: #a9a9a9;
         }
+        .arrow_img{
+            position: absolute;
+            top: 32%;
+            width: 100%;
+            left: 0;
+            height: 40%;
+            margin: auto;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
@@ -114,7 +121,7 @@
         <header class="row">
             <div class="top_left"></div>
             <div class="top">
-                <p class="top_txt"><strong>AI경진대회</strong><br>그대의 걸음걸이</p>
+                <img src="./하얀 플명.png" alt="proname" class="proname">
             </div>
             <div class="top_right">
                 <img src="./로고 하양.png" alt="team_logo" class="team_logo">
@@ -136,8 +143,10 @@
                 <form>
                     <input class="start" type="button" onclick="" value="Start!"/>
                 </form>
-                <img src="./횡단보도 사진.png" alt="logo" class="logo_img">
+                <img src="./횡단보도 사진 sq.png" alt="logo" class="logo_img">
+                
             </div>
+            <img src="./좌우 화살표.png" alt="arrow" class="arrow_img">
             <div class="">
 
             </div>
