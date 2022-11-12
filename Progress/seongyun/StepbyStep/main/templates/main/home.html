@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your_step</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <div class="container center-text">
+        <header class="row">
+            <div class="top_left"></div>
+            <div class="top">
+                <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
+            </div>
+            <div class="top_right">
+                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" class="team_logo">
+            </div>
+
+        </header>
+        <section class="homepage">
+            <div class="logo">
+                
+                <div class="txt">
+                    부추의 특별한 성분과 건강상의 효능<br>
+                    간 기능 개선 및 해독 작용이 있답니다.<br>
+                    항균 작용으로 감염을 예방하는 효능이 있답니다.<br>
+                    항염 작용으로 만성 질환 증상 개선을 도울 수 있답니다.<br>
+                    혈압을 낮추는 효능이 있답니다.<br>
+                    혈당 수치 개선 효능이 있답니다.<br>
+                    심혈관 건강을 돕는 효능이 있답니다.
+                </div>
+                <form>
+                    <input class="start" type="button" onClick="location.href='http://127.0.0.1:8000/detect'" value="Start!"/>
+                </form>
+                <img src="{% static 'main/images/walk_sq.png' %}" alt="logo" class="logo_img">
+                
+            </div>
+            <img src="{% static 'main/images/lr_arrow.png' %}" alt="arrow" class="arrow_img">
+            <div class="">
+
+            </div>
+            
+        </section>
+    </div>
+</body>
+</html>

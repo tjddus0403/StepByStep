@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your_step/camera</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <div class="container center-text">
+        <header class="row">
+            <div class="top_left"></div>
+            <div class="top">
+                <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
+            </div>
+            <div class="top_right">
+                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" class="team_logo">
+            </div>
+        </header>
+        <section class="homepage">
+            <div class="cam">
+                <img src="http://127.0.0.1:8000/camera" style="width:650px;" />
+            </div>
+            <img src="{% static 'main/images/lr_arrow.png' %}" alt="arrow" class="arrow_img">
+            <div class="qr">
+                <form>
+                    <input class="qr_button" type="button" onClick="location.href='http://127.0.0.1:8000/qr'" value="QR!"/>
+                </form>
+            </div>
+            
+        </section>
+    </div>
+</body>
+</html>
