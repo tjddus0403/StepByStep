@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
+import json
 
 #import sys
 #import os
@@ -14,5 +15,10 @@ def detect(request):
 
 def qr(request):
     return render(request, 'main/qr.html')
+
 def url(request):
-    return render(request, 'main/url.html')
+    #return render(request, 'main/url.html')
+    file_path="./info.json"
+    with open(file_path, "r") as json_file:
+        json_data=json.load(json_file)
+    return render(request,'main/url.html',{"data":json_data})

@@ -3,6 +3,8 @@ import numpy as np
 import cv2
 import posenet
 import time
+import json
+
 np.set_printoptions(threshold=np.inf, linewidth=np.inf)
 
 args = {"model": 101, "scale_factor": 1.0, "notxt": True, "image_dir": './images',
@@ -18,6 +20,9 @@ class VideoCamera(object):
         self.cap.release()
 
 def gen(camera):
+    file_path="./info.json"
+    data={}
+    data['post']=[]
     with tf.compat.v1.Session() as sess:
         model_cfg, model_outputs = posenet.load_model(args['model'], sess)
         #모델에서 output_stride 가져오는 듯
@@ -51,3 +56,7 @@ def gen(camera):
             frame=img.tobytes()
             yield(b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+            # data['post'].append({'진짜 여기 간단한거만 들어가야댐...':keypoint_scores.tolist()})
+            # with open(file_path,'w')as outfile:
+            #     json.dump(data,outfile, indent=4)
+            #위에 세줄로 json 수정함

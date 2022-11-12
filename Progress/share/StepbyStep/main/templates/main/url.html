@@ -1,12 +1,51 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <title>Your_step/url</title>
+    <style>
+        #fst_table{
+            margin: auto;
+            border: 2px solid #f4f4f4;
+        }
+    </style>
 </head>
-<body>
-    Ah E ge An Doi?
+<body> 
+    <div class="container center-text">
+        <header class="row">
+            <div class="top_left"></div>
+            <div class="top">
+                <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
+            </div>
+            <div class="top_right">
+                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" class="team_logo">
+            </div>
+
+        </header>
+    <h1>HI HI</h1>
+    <table id="fst_table">
+        <th>example</th>
+        <tr>
+            <td>key1</td>
+            <td>value1</td>
+        </tr>
+        <tr>
+            <td>key2</td>
+            <td>value2</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        var a={{ data|safe }};
+        document.write(a['posts'][0]['title']);
+        var table1 = document.getElementById("fst_table");
+        table1.rows[1].cells[0].innerHTML = "title"
+        table1.rows[1].cells[1].innerHTML = a['posts'][0]['title']
+    </script>
+    </div>
 </body>
 </html>
