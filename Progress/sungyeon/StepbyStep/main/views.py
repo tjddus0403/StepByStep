@@ -19,11 +19,6 @@ def url(request):
     file_path="./sample.json"
     with open(file_path, "r") as json_file:
         json_data=json.load(json_file)
-        print(json_data)
-        print("")
-        print(json_data['posts'])
-        print("")
-        print(json_data['posts'][0]['title'])
     #list=[1,2,3,4,5]
     #j_list=json.dumps(list)
     return render(request,'main/url.html',{"data":json_data})
