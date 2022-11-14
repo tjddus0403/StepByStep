@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
 import json
+
 #import sys
 #import os
 #sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
@@ -14,11 +15,10 @@ def detect(request):
 
 def qr(request):
     return render(request, 'main/qr.html')
+
 def url(request):
     #return render(request, 'main/url.html')
-    file_path="./sample.json"
+    file_path="./result.json"
     with open(file_path, "r") as json_file:
         json_data=json.load(json_file)
-    #list=[1,2,3,4,5]
-    #j_list=json.dumps(list)
     return render(request,'main/url.html',{"data":json_data})
