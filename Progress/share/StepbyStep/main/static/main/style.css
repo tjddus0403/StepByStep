@@ -57,10 +57,12 @@ body{
 .txt{
     position: absolute;
     bottom: 120%;
-    left: 50px;
-    right: 10px;
-    text-align: left;
     opacity: 0.2;
+    text-align: center;
+    margin: auto;
+    left: 65px;
+    font-size: 35px;
+    font-weight: bold;
     transition: all 0.3s ease-in-out;
     z-index: 2;
     color: #F4F4F4;
@@ -72,7 +74,7 @@ body{
     opacity: 0.5;
 }
 .logo:hover .txt{
-    bottom: 40%;
+    bottom: 50%;
     opacity: 1;
     transition: all 0.3s ease-in-out;
 }

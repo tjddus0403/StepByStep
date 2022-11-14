@@ -7,7 +7,7 @@
 <!-- <link rel="stylesheet" href=
 "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
 <link rel="stylesheet" href="{% static 'main/style.css' %}">
-
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
 <style>
 	.qr-code {
@@ -31,7 +31,7 @@
 				<img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
 			</div>
 			<div class="top_right">
-				<img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" class="team_logo">
+				<img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" onClick="location.href='https://github.com/tjddus0403/StepByStep'" class="team_logo">
 			</div>
 		</header>
 	<div class="container-fluid">
@@ -41,6 +41,10 @@
 		this will change according to the
 		data entered later -->	
 		<img src = "{% static 'main/images/loading.gif' %}" class="qr-code img-thumbnail img-responsive" />
+			<py-script>
+				import math
+				print(abs(-11))
+			</py-script>
 		<a href="http://127.0.0.1:8000/url">
 			<h2 style="color: #f4f4f4;">QR 코드를 스캔하여 결과 보기</h2>
 		</a>

@@ -56,7 +56,7 @@ def gen(camera):
             frame=img.tobytes()
             yield(b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-            # data['post'].append({'진짜 여기 간단한거만 들어가야댐...':keypoint_scores.tolist()})
+            # data['post'].append({'really here simple':keypoint_scores.tolist()})
             # with open(file_path,'w')as outfile:
             #     json.dump(data,outfile, indent=4)
             #위에 세줄로 json 수정함

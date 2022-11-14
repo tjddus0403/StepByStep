@@ -12,6 +12,87 @@
             margin: auto;
             border: 2px solid #f4f4f4;
         }
+        .info_box{
+            margin: 50px auto;
+            max-width: 700px;
+            background: #f4f4f4;
+            border-radius: 10px;
+        }
+        .step_mbti{
+            margin: auto;
+            font-size: 40px;
+            font-weight: bold;
+            /* color: #1A61BD; */
+            /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
+
+        }
+        .graph{
+            width: 80%; height: 40px; background: #ccc; border-radius: 40px;
+        }
+        .graph span{
+            display: block; padding: 0 10px;  height: 40px; line-height: 40px;  
+            margin: auto;
+            border-radius: 40px; box-sizing: border-box; color: #f4f4f4;
+        }
+        .graph_title{
+            padding-top: 20px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            width: 60%;
+        }
+        .gt_C{
+            width: 100%;
+            display: flex;
+        }
+        .gt_L{
+            width: 10%;
+            padding-top: 50px;
+            margin: 0;
+            height: 100%;
+        }
+        .gt_R{
+            width: 10%;
+            padding-top: 50px;
+            margin: 0;
+            height: 100%;
+        }
+        .graph_val{
+            width: 100%;
+            display: flex;
+        }
+        .graphs .graph_title:first-child{
+            padding-top: 0px;
+        }
+        .graphs .graph_val:last-child{
+            padding-bottom: 40px;
+        }
+        .front_word{
+            width: 10%;
+            font-size: 27px;
+        }
+        .back_word{
+            width: 10%;
+            font-size: 27px;
+        }
+        hr{
+            width: 80%;
+            height: 3px;
+            border: 0;
+            background: black;
+            border-radius: 100%;
+        }
+        .description h2{
+            margin-bottom: 0;
+            
+        }
+        .description p{
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .description p:last-child{
+            padding-bottom: 50px;
+        }
+
     </style>
 </head>
 <body> 
@@ -22,29 +103,213 @@
                 <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
             </div>
             <div class="top_right">
-                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" class="team_logo">
+                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" onClick="location.href='https://github.com/tjddus0403/StepByStep'" class="team_logo">
+            </div>
+        </header>
+
+    <div class="info_box">
+        <h1 style="margin: 0; padding-top: 10px;">그대의 걸음걸이는?</h1>
+        <p class="step_mbti">:(</p>
+        <hr/>
+        <div class="graphs">
+            <!-- graph1 -->
+            <div class="gt_C">
+                <div style="width: 10%;"></div>
+                <p class="gt_L"><b>S</b>ky</p>
+                <h3 class="graph_title">목 숙임 정도</h3>
+                <p class="gt_R"><b>G</b>round</p>
+                <div style="width: 10%;"></div>
+            </div>
+            <div class="graph_val">
+                <div class="front_word">
+                    <b>S</b>
+                </div>
+                <div class="graph">
+                    <span id="val_1" style=" background: rgb(223, 72, 72);">0%</span>
+                </div>
+                <div class="back_word">
+                    <b>G</b>
+                </div>
             </div>
 
-        </header>
-    <h1>HI HI</h1>
-    <table id="fst_table">
-        <th>example</th>
-        <tr>
-            <td>key1</td>
-            <td>value1</td>
-        </tr>
-        <tr>
-            <td>key2</td>
-            <td>value2</td>
-        </tr>
-    </table>
+            <!-- graph2 -->
+            <div class="gt_C">
+                <div style="width: 10%;"></div>
+                <p class="gt_L"><b>B</b>ack</p>
+                <h3 class="graph_title">허리 숙임 정도</h3>
+                <p class="gt_R"><b>F</b>ront</p>
+                <div style="width: 10%;"></div>
+            </div>
+            <div class="graph_val">
+                <div class="front_word">
+                    <b>B</b>
+                </div>
+                <div class="graph">
+                    <span id="val_2" style=" background: rgb(226, 202, 63);">0%</span>
+                </div>
+                <div class="back_word">
+                    <b>F</b>
+                </div>
+            </div>
+
+            <!-- graph3 -->
+            <div class="gt_C">
+                <div style="width: 10%;"></div>
+                <p class="gt_L"><b>R</b>ight</p>
+                <h3 class="graph_title">팔 흔들림 정도</h3>
+                <p class="gt_R"><b>L</b>eft</p>
+                <div style="width: 10%;"></div>
+            </div>
+            <div class="graph_val">
+                <div class="front_word">
+                    <b>R</b>
+                </div>
+                <div class="graph">
+                    <span id="val_3" style=" background: rgb(56, 201, 80);">0%</span>
+                </div>
+                <div class="back_word">
+                    <b>L</b>
+                </div>
+            </div>
+
+            <!-- graph4 -->
+            <div class="gt_C">
+                <div style="width: 10%;"></div>
+                <p class="gt_L"><b>N</b>arrow</p>
+                <h3 class="graph_title">보폭 넓음 정도</h3>
+                <p class="gt_R"><b>W</b>ide</p>
+                <div style="width: 10%;"></div>
+            </div>
+            <div class="graph_val">
+                <div class="front_word">
+                    <b>N</b>
+                </div>
+                <div class="graph">
+                    <span id="val_4" style="background: rgb(72, 155, 223);">0%</span>
+                </div>
+                <div class="back_word">
+                    <b>W</b>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="description">
+            <h2>목 숙임 정도</h2>
+            <p>S에 가깝다면 목이 뒤로 G에 가깝다면 목이 앞으로 굽어져 있다는 뜻입니다.</p>
+
+            <h2>허리 숙임 정도</h2>
+            <p>B에 가깝다면 허리가 뒤로 F에 가깝다면 허리가 앞으로 숙여져 있다는 뜻입니다. </p>
+
+            <h2>팔 흔들림 정도</h2>
+            <p>R에 가까울 수록 오른팔이 L에 가까울수록 왼팔이 더 크게 흔들리는 경향이 있다는 뜻입니다.</p>
+
+            <h2>보폭 넓음 정도</h2>
+            <p>N에 가까울수록 보폭이 좁고 W에 가까울 수록 보폭이 넓다는 뜻입니다.</p>
+        </div>
+    </div>
 
     <script type="text/javascript">
         var a={{ data|safe }};
-        document.write(a['posts'][0]['title']);
-        var table1 = document.getElementById("fst_table");
-        table1.rows[1].cells[0].innerHTML = "title"
-        table1.rows[1].cells[1].innerHTML = a['posts'][0]['title']
+        rslt1 = a['post'][0]['result1'];
+        rslt2 = a['post'][0]['result2'];
+        rslt3 = a['post'][0]['result3'];
+        rslt4 = a['post'][0]['result4'];
+
+        var val1 = document.getElementById("val_1");
+        var val2 = document.getElementById("val_2");
+        var val3 = document.getElementById("val_3");
+        var val4 = document.getElementById("val_4");
+
+        // val1.style.width = Math.abs(rslt1)+'%';
+        // val1.innerText = rslt1+'%';
+
+        // val2.style.width = Math.abs(rslt2)+'%';
+        // val2.innerText = rslt2+'%';
+
+        // val3.style.width = Math.abs(rslt3)+'%';
+        // val3.innerText = rslt3+'%';
+
+        // val4.style.width = Math.abs(rslt4)+'%';
+        // val4.innerText = rslt4+'%';
+
+        var stepmbti = '';
+
+        if((rslt1 < 5) && (rslt1 > -5)){
+            val1.style.width = '10%';
+            val1.innerText = rslt1;
+        }
+        else{
+            val1.style.width = Math.abs(rslt1)+5+'%';
+            val1.innerText = rslt1;
+        }
+        if((rslt2 < 5) && (rslt2 > -5)){
+            val2.style.width = '10%';
+            val2.innerText = rslt2;
+        }
+        else{
+            val2.style.width = Math.abs(rslt2)+5+'%';
+            val2.innerText = rslt2;
+        }
+        if((rslt3 < 5) && (rslt3 > -5)){
+            val3.style.width = '10%';
+            val3.innerText = rslt3;
+        }
+        else{
+            val3.style.width = Math.abs(rslt3)+5+'%';
+            val3.innerText = rslt3;
+        }
+        if((rslt4 < 5) && (rslt4 > -5)){
+            val4.style.width = '10%';
+            val4.innerText = rslt4;
+        }
+        else{
+            val4.style.width = Math.abs(rslt4)+5+'%';
+            val4.innerText = rslt4;
+        }
+
+        if (rslt1 < 0){
+            stepmbti += 'S';
+            val1.style.marginRight = '45%';
+            val1.style.textAlign = 'left';
+        }
+        else{
+            stepmbti += 'G';
+            val1.style.marginLeft = '45%';
+            val1.style.textAlign = 'right';
+        }
+        if (rslt2 < 0){
+            stepmbti += 'B';
+            val2.style.marginRight = '45%';
+            val2.style.textAlign = 'left';
+        }
+        else{
+            stepmbti += 'F';
+            val2.style.marginLeft = '45%';
+            val2.style.textAlign = 'right';
+        }
+        if (rslt3 < 0){
+            stepmbti += 'R';
+            val3.style.marginRight = '45%';
+            val3.style.textAlign = 'left';
+        }
+        else{
+            stepmbti += 'L';
+            val3.style.marginLeft = '45%';
+            val3.style.textAlign = 'right';
+        }
+        if (rslt4 < 0){
+            stepmbti += 'N';
+            val4.style.marginRight = '45%';
+            val4.style.textAlign = 'left';
+        }
+        else{
+            stepmbti += 'W';
+            val4.style.marginLeft = '45%';
+            val4.style.textAlign = 'right';
+        }
+
+        document.getElementsByClassName("step_mbti")[0].innerText = stepmbti;
+
     </script>
     </div>
 </body>
