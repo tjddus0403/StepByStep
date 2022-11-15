@@ -1,4 +1,8 @@
 # 그대의 걸음걸이
+## AI융합경진 대회 _ Team.뜨아아
+![logo](https://user-images.githubusercontent.com/70639589/201914459-ec05e708-a87b-4ed8-841f-b168be58a874.png)
+### 배경 및 동기
+
 
 ### 설치 및 실행과정
 #### Git clone
@@ -19,3 +23,4 @@ $ cd StepByStep/StepbyStep
 (django_env) $ python manage.py migrate
 (django_env) $ python manage.py createsupersuer
 (django_env) $ pytho manage.py runserver
+```
