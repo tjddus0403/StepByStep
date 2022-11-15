@@ -1,3 +1,3 @@
-# StepByStep
+# 그대의 걸음걸이
 
 #### Django 가상환경에서 실행
