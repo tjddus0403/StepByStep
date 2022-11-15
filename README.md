@@ -27,3 +27,9 @@ $ cd StepByStep/StepbyStep
 ```
 #### 데모영상
 [YouTube 바로가기](https://google.com)
+
+#### Contributors
+- Kim Sungyeon
+- Ko Jaewon
+- Kang Donghyun
+- Kim Seongyun
