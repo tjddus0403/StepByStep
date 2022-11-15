@@ -1,6 +1,7 @@
 # 그대의 걸음걸이
 ## AI융합경진 대회 _ Team.뜨아아
-![logo](https://user-images.githubusercontent.com/70639589/201914459-ec05e708-a87b-4ed8-841f-b168be58a874.png)
+![blue_logo](https://user-images.githubusercontent.com/70639589/201914819-983013cc-2775-48ce-add4-c1fe3e7f4f14.png)
+
 ### 배경 및 동기
 
 
