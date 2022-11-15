@@ -1,5 +1,4 @@
 import math
-#import imageDetect
 import numpy as np
 
 #키와 보폭의 비율 기준과의 차이점 파악

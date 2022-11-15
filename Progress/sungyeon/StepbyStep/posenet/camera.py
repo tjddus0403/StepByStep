@@ -95,18 +95,10 @@ def gen(camera):
             position.extend(spine_position)
             keypoint_coords *= output_scale
             
-            #re1=posenet.DegreeOfSpinalCurve.SpineCurve(keypoint_coords[0])
             result1.append(posenet.DegreeOfSpinalCurve.SpineCurve(keypoint_coords[0]))
-            #r1.append(re1)
-            #re2=posenet.SpineLine.SpineLine(keypoint_coords[0])
             result2.append(posenet.SpineLine.SpineLine(keypoint_coords[0]))
-            #r2.append(re2)
-            #re3=posenet.DegreeOfArm.diagnose_Arm(keypoint_coords[0])
             result3.append(posenet.DegreeOfArm.diagnose_Arm(keypoint_coords[0]))
-            #r3.append(re3)
-            #re4=posenet.FootStepSize.diagnose_footsize(keypoint_coords[0])
             result4.append(posenet.FootStepSize.diagnose_footsize(keypoint_coords[0]))
-            #r4.append(re4)
             
             if(time.time()-start>10):
                 break
@@ -130,11 +122,6 @@ def gen(camera):
                                 'result4' : result4})
             with tf.gfile.GFile(file_path,'w')as outfile:
                 json.dump(data,outfile, indent=4)
-            #위에 세줄로 json 수정함
-        '''new_r1 = [x for x in r1 if np.isnan(x) == False]
-        sum1=sum(new_r1)
-        new_r2=[x for x in r2 if np.isnan(x) == False]
-        sum2=sum(new_r2)'''
 
         with tf.gfile.GFile(file_path,'r') as datafile:
             json_data=json.load(datafile)
