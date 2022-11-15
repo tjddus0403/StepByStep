@@ -1,6 +1,6 @@
 from django.urls import path
 from django.http import StreamingHttpResponse
-from camera import VideoCamera, gen
+from posenet.camera import VideoCamera, gen
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings

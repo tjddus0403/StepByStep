@@ -3,11 +3,7 @@
 <html>
 
 <head>
-<!-- Include Bootstrap for styling -->
-<!-- <link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
 <link rel="stylesheet" href="{% static 'main/style.css' %}">
-<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
 <style>
 	.qr-code {
@@ -36,15 +32,7 @@
 		</header>
 	<div class="container-fluid">
 		<div class="text-center">
-
-		<!-- Get a Placeholder image initially,
-		this will change according to the
-		data entered later -->	
 		<img src = "{% static 'main/images/loading.gif' %}" class="qr-code img-thumbnail img-responsive" />
-			<py-script>
-				import math
-				print(abs(-11))
-			</py-script>
 		<a href="http://127.0.0.1:8000/url">
 			<h2 style="color: #f4f4f4;">QR 코드를 스캔하여 결과 보기</h2>
 		</a>
@@ -61,7 +49,7 @@
 
 		let finalURL =
 		'https://chart.googleapis.com/chart?cht=qr&chl=' +
-		htmlEncode("http://127.0.0.1:8000/url") +
+		htmlEncode("https://35dc-219-255-158-172.jp.ngrok.io/url") +
 		'&chs=160x160&chld=L|0'
 
 		$('.qr-code').attr('src', finalURL);
