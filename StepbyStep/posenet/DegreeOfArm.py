@@ -5,6 +5,7 @@ import numpy as np
 # 7:왼쪽팔꿈치, 8:오른쪽팔꿈치, 9:왼쪽손목, 10:오른쪽손목, 11:왼쪽골반부위, 12:오른쪽골반부위
 # 13:왼쪽무릎, 14:오른쪽무릎, 15:왼쪽발목, 16:오른쪽발목
 # 17:척추상 = 5/6평균, 18:척추중 = 5/6/11/12평균 19:척추하 = 11/12평균
+# 20:목뼈 시작 = 3/4평균
 
 def getDegree(key1, key2, key3):
     try:
@@ -13,22 +14,12 @@ def getDegree(key1, key2, key3):
         return abs(x*180/math.pi)
     except:
         getDegree(key1, key2, key3)
-#팔꿈치, 어깨, 척추하
+#팔꿈치, 척추상, 척추하
 def diagnose_Arm(keypoint):
     left_angle = getDegree(keypoint[7] ,keypoint[17], keypoint[19])
     right_angle = getDegree(keypoint[8], keypoint[17], keypoint[19])
-
     if(left_angle>=90):
         left_angle=left_angle-180
     if(right_angle>=90):
         right_angle=right_angle-180
-    '''if(keypoint[7][0]>=keypoint[17][0]):
-        left_angle=left_angle
-    else:
-        left_angle=-left_angle
-    if(keypoint[8][0]>=keypoint[17][0]):
-        right_angle=right_angle
-    else:
-        right_angle=-right_angle'''
-
     return [left_angle,right_angle]

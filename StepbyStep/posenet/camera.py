@@ -39,13 +39,8 @@ def gen(camera):
     data['post']=[]
     with tf.compat.v1.Session() as sess:
         model_cfg, model_outputs = posenet.load_model(args['model'], sess)
-        #모델에서 output_stride 가져오는 듯
         output_stride = model_cfg['output_stride']
-        start=time.time()
-        '''r1=[]
-        r2=[]
-        r3=[]
-        r4=[]'''
+        # 걸음걸이 측정 시간 10초 타이머 시작
         start=time.time()
         while True:
             result1 = []
@@ -67,14 +62,7 @@ def gen(camera):
                 max_pose_detections=10, 
                 min_pose_score=0.15)
 
-            # #N1 전신 인식을 못했을 때 error 처리해서 멈추게 하기
-            # if len(keypoint_coords[0])!=21:
-            #     break
-
-            # if not posenet.ready.isSide(keypoint_coords[0]):
-            #     print("측면을 보여라!")
-            #     continue
-            
+            # 척추상, 척추중, 척추하, 목뼈시작 point 추가하기
             spineTop = getAverage(
                 [keypoint_coords[0][5], keypoint_coords[0][6]], 2)
             spineMiddle = getAverage(
@@ -95,6 +83,7 @@ def gen(camera):
             position.extend(spine_position)
             keypoint_coords *= output_scale
             
+            #목숙임, 허리숙임, 팔흔들림, 보폭크기 정도를 측정하여 info.json에 들어갈 result로 저장해둠
             result1.append(posenet.DegreeOfSpinalCurve.SpineCurve(keypoint_coords[0]))
             result2.append(posenet.SpineLine.SpineLine(keypoint_coords[0]))
             result3.append(posenet.DegreeOfArm.diagnose_Arm(keypoint_coords[0]))
@@ -102,7 +91,7 @@ def gen(camera):
             
             if(time.time()-start>10):
                 break
-
+            #정확도가 어느정도 충족되는 결과만 캠 화면에 점으로 나타나게 함 (우리가 보는 점들은 어느정도 정확도가 있는 것임)
             overlay_img=posenet.utils.draw_skel_and_kp(
                 display_img, pose_scores, keypoint_scores, keypoint_coords,
                 min_pose_score=0.15, min_part_score=0.1)
@@ -115,22 +104,26 @@ def gen(camera):
             frame=img.tobytes()
             yield(b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-            
+            #info.json에 들어갈 데이터 형식대로 저장
             data['post'].append({'result1': result1,
                                 'result2' : result2,
                                 'result3' : result3,
                                 'result4' : result4})
+            #info.json에 json 형식으로 데이터 저장
             with tf.gfile.GFile(file_path,'w')as outfile:
                 json.dump(data,outfile, indent=4)
-
+        #info.json에 저장된 전체 데이터를 불러옴
         with tf.gfile.GFile(file_path,'r') as datafile:
             json_data=json.load(datafile)
 
+        #여기서부터 전체 데이터를 최종 결과로 가공하여 result.json에 저장하는 부분 
         new_r1=[]
         new_r2=[]
         new_r3=[[],[]]
         new_r4=[]
 
+        #옆모습으로 측정하기때문에 점들이 겹칠 때, 튀는 값이 발생할 수 있음 -> 이 값을 각 함수에서 NaN으로 예외처리 해줬을 것 /
+        #NaN값을 제외한 측정값만 사용하여 최종 결과 가공 
         for i in json_data['post']:
             if(np.isnan(i['result1'][0])==False):
                 new_r1.append(i['result1'][0])
@@ -141,7 +134,8 @@ def gen(camera):
                 new_r3[1].append(i['result3'][0][1])
             if(np.isnan(i['result4'][0])==False):
                 new_r4.append(i['result4'][0])
-        print(new_r3)
+
+        #result4 : 보폭크기 정도 결과 가공
         l = [0, 0, 0, 0, 0]
         v4=0
         for i in range(len(new_r4)):
@@ -166,8 +160,8 @@ def gen(camera):
             v4 = -25
         elif l[0] != 0:
             v4 = -50
-        
 
+        #result3 : 팔흔들림 정도 결과 가공
         v3 = 0
 
         l3m = []
@@ -178,7 +172,6 @@ def gen(camera):
         new_r3[0].sort()
         new_r3[1].sort()
 
-        print(new_r3[0])
         for i in range(int(len(new_r3[0]) * 0.3)):
             l3m.append(new_r3[0][i])
         for j in range(int(len(new_r3[1]) * 0.3)):
@@ -196,9 +189,8 @@ def gen(camera):
             v3 = -50 * ((lres - rres) / lres)
         elif (lres < rres):
             v3 = 50 * ((rres - lres) / rres)  
-
-
-
+        
+        #result.json에 최종 가공 데이터 넣고 저장
         result={}
         result['post']=[]
         result['post'].append({'result1': int(sum(new_r1)/len(new_r1)),
@@ -207,4 +199,3 @@ def gen(camera):
                             'result4':v4})
         with open('result.json','w')as f:
             json.dump(result,f,indent=4)
-        print("이제 넘겨봐")

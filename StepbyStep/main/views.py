@@ -13,6 +13,7 @@ def qr(request):
     return render(request, 'main/qr.html')
 
 def url(request):
+    # 최종적으로 사용자에게 보여주는 정보담은 result.json 데이터 전달
     file_path="./result.json"
     with open(file_path, "r") as json_file:
         json_data=json.load(json_file)
