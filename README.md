@@ -29,6 +29,14 @@ $ cd StepByStep/StepbyStep
 [YouTube 바로가기](https://google.com)
 
 #### Contributors
+
+| Name | School & Major | Github |
+|-|-|-|
+| 👩🏻‍💻 SungYeon Kim | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
+| 👨🏻‍💻 JaeWon Ko | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
+| 👨🏻‍💻 DongHyun Kang | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
+| 👨🏻‍💻 SeongYun Kim | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
+#### Contributors
 - Kim Sungyeon
 - Ko Jaewon
 - Kang Donghyun
