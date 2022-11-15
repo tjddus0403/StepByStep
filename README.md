@@ -49,5 +49,5 @@ $ cd StepByStep/StepbyStep
 | 👩🏻‍💻 SungYeon Kim | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
 | 👨🏻‍💻 JaeWon Ko | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/jaewon1778 |
 | 👨🏻‍💻 DongHyun Kang | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/andantinow |
-| 👨🏻‍💻 SeongYun Kim | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/tjddus0403 |
+| 👨🏻‍💻 SeongYun Kim | 🎓 Soongsil Univ. 🤖 AI Convergence | https://github.com/kimseoungyun |
 
