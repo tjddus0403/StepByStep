@@ -26,7 +26,7 @@ $ cd StepByStep/StepbyStep
 (django_env) $ pytho manage.py runserver
 ```
 ## 데모영상
-[YouTube 바로가기](https://google.com)
+[YouTube 바로가기](https://www.youtube.com/watch?v=HqwVybZ8kz4)
 
 ## Development Environment
 <p align="center">
