@@ -1,4 +1,5 @@
 # 그대의 걸음걸이
+## 걸음걸이 이미지를 활용한 신체 상태 분석 시스템
 ## AI융합경진 대회 _ Team.뜨아아
 ![blue_logo](https://user-images.githubusercontent.com/70639589/201914819-983013cc-2775-48ce-add4-c1fe3e7f4f14.png)
 
