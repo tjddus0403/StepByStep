@@ -2,5 +2,6 @@
 
 #### Getting Started
 ```c
-git clone 
+$ git clone https://github.com/tjddus0403/StepByStep.git
 ```
+
