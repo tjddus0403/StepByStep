@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your_step</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <div class="container center-text">
+        <header class="row">
+            <div class="top_left"></div>
+            <div class="top">
+                <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
+            </div>
+            <div class="top_right">
+                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" onClick="location.href='https://github.com/tjddus0403/StepByStep'" class="team_logo">
+            </div>
+
+        </header>
+        <section class="homepage">
+            <div class="logo">
+                
+                <div class="txt">
+                    당신의 걸음걸이를 분석합니다.<br>
+                    시작하려면 아래 Start! 버튼을 누르세요.
+                </div>
+                <form>
+                    <input class="start" type="button" onClick="location.href='http://127.0.0.1:8000/detect'" value="Start!"/>
+                </form>
+                <img src="{% static 'main/images/walk_sq.png' %}" alt="logo" class="logo_img">
+                
+            </div>
+            <img src="{% static 'main/images/lr_arrow.png' %}" alt="arrow" class="arrow_img">
+            <div class="">
+                
+            </div>
+            
+        </section>
+    </div>
+</body>
+</html>
