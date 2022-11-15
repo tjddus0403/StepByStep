@@ -92,7 +92,13 @@
         .description p:last-child{
             padding-bottom: 50px;
         }
+        @media screen and (max-width: 760px) {
+            .row{
+                height: 40px;
+            }
+        }
 
+        
     </style>
 </head>
 <body> 
@@ -100,10 +106,16 @@
         <header class="row">
             <div class="top_left"></div>
             <div class="top">
-                <img src="{% static 'main/images/name.png' %}" alt="proname" onClick="location.href='http://127.0.0.1:8000'" class="proname">
+                <img src="{% static 'main/images/name.png' %}" 
+                    
+                    alt="proname" 
+                    onClick="location.href='http://127.0.0.1:8000'" 
+                    class="proname">
             </div>
             <div class="top_right">
-                <img src="{% static 'main/images/logo_white.png' %}" alt="team_logo" onClick="location.href='https://github.com/tjddus0403/StepByStep'" class="team_logo">
+                <img src="{% static 'main/images/logo_white.png' %}" 
+                    
+                alt="team_logo" onClick="location.href='https://github.com/tjddus0403/StepByStep'" class="team_logo">
             </div>
         </header>
 
@@ -155,20 +167,20 @@
             <!-- graph3 -->
             <div class="gt_C">
                 <div style="width: 10%;"></div>
-                <p class="gt_L"><b>R</b>ight</p>
+                <p class="gt_L"><b>L</b>eft</p>
                 <h3 class="graph_title">팔 흔들림 정도</h3>
-                <p class="gt_R"><b>L</b>eft</p>
+                <p class="gt_R"><b>R</b>ight</p>
                 <div style="width: 10%;"></div>
             </div>
             <div class="graph_val">
                 <div class="front_word">
-                    <b>R</b>
+                    <b>L</b>
                 </div>
                 <div class="graph">
                     <span id="val_3" style=" background: rgb(56, 201, 80);">0%</span>
                 </div>
                 <div class="back_word">
-                    <b>L</b>
+                    <b>R</b>
                 </div>
             </div>
 
@@ -201,10 +213,10 @@
             <p>B에 가깝다면 허리가 뒤로 F에 가깝다면 허리가 앞으로 숙여져 있다는 뜻입니다. </p>
 
             <h2>팔 흔들림 정도</h2>
-            <p>R에 가까울 수록 오른팔이 L에 가까울수록 왼팔이 더 크게 흔들리는 경향이 있다는 뜻입니다.</p>
+            <p>L에 가깝다면 왼팔이 R에 가깝다면 오른팔이 더 크게 흔들리는 경향이 있다는 뜻입니다.</p>
 
             <h2>보폭 넓음 정도</h2>
-            <p>N에 가까울수록 보폭이 좁고 W에 가까울 수록 보폭이 넓다는 뜻입니다.</p>
+            <p>N에 가깝다면 보폭이 좁고 W에 가깝다면 보폭이 넓다는 뜻입니다.</p>
         </div>
     </div>
 
