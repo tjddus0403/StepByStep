@@ -3,7 +3,7 @@
 ![blue_logo](https://user-images.githubusercontent.com/70639589/201914819-983013cc-2775-48ce-add4-c1fe3e7f4f14.png)
 
 ## 작품 소개
-[경진대회 최종 결과 발표.pdf](https://github.com/tjddus0403/StepByStep/files/10017819/default.pdf)
+[Uploading 경진대회 최종 결과 발표.pdf…]()
 
 ## 설치 및 실행과정
 - Git clone
